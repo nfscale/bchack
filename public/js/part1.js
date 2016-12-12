@@ -22,7 +22,7 @@ $(document).on('ready', function() {
 						user: $('select[name="user"]').val(),
 						vendorid : "VENDOR1",
 						customerid : "CUST1",
-						invoicenumber : "INV-12121",
+						invoicenumber : "INV-"+randStr(6),
 						invoiceamount : "1000",
 						currency : "USD",
 						material : "Material",
@@ -36,7 +36,7 @@ $(document).on('ready', function() {
 		if(obj.user && obj.name && obj.color){
 			console.log('creating marble, sending', obj);
 			ws.send(JSON.stringify(obj));
-			//ws.send(JSON.stringify({type: 'create_invoice', v:1}));
+			ws.send(JSON.stringify({type: 'create_invoice', v:1}));
 			showHomePanel();
 			$('.colorValue').html('Color');											//reset
 			for(var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//reset
