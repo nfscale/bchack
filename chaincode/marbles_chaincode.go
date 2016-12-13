@@ -370,9 +370,9 @@ func (t *SimpleChaincode) init_marble(stub shim.ChaincodeStubInterface, args []s
 
 	//   0       1       2     3
 	// "asdf", "blue", "35", "bob"
-	if len(args) != 4 {
+	/*if len(args) != 4 {
 		return nil, errors.New("Incorrect number of arguments. Expecting 4")
-	}
+	}*/
 
 	//input sanitation
 	fmt.Println("- start init marble")
